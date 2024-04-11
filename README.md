@@ -13,7 +13,7 @@ All you need to do is to run docker-compose and check your http://localhost:3000
 Tested on Ubuntu Focal / Bionic.
 
 ```
-$ docker-compose up --build -d
+$ docker-compose up --build
 ```
 
 ## Explanation / Demonstration Methods
