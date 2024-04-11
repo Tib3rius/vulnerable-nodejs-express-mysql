@@ -15,6 +15,7 @@ var connection = mysql.createConnection({
   user: "login",
   password: "login",
   database: "login",
+  debug: ["ComQueryPacket", "RowDataPacket"]
 });
 
 var app = express();
@@ -36,6 +37,8 @@ app.post("/auth", function (request, response) {
   var username = request.body.username;
   var password = request.body.password;
   if (username && password) {
+    console.log("Username: " + username + " (" + typeof(username) + ")");
+    console.log("Password: " + password + " (" + typeof(password) + ")");
     connection.query(
       "SELECT * FROM accounts WHERE username = ? AND password = ?",
       [username, password],
